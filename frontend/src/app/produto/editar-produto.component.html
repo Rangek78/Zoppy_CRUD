@@ -1,0 +1,23 @@
+<div class="container" *ngIf="produto">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="produto.nome" required
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="preço">Preço:</label>
+                    <input type="number" class="form-control" id="preço" name="preço" [(ngModel)]="produto.valor"
+                        required autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-edit"></i>Atualizar</button>
+                <button type="button" class="btn btn-outline-primary btn-block" (click)="voltar()">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Voltar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
