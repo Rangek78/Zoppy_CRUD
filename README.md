@@ -94,7 +94,7 @@ Em um novo terminal, siga estes passos para iniciar a aplicação frontend.
 
 ```
 # A partir da pasta raiz do projeto
-cd frontend
+cd Zoppy_CRUD/frontend
 ```
 **2. Instale as dependências**
 
