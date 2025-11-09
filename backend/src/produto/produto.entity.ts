@@ -9,5 +9,11 @@ export class ProdutoEntity {
   nome: string;
 
   @Column({ type: 'float', nullable: false })
-  valor: number;
+  valorDeCompra: number;
+
+  @Column({ type: 'float', nullable: false })
+  valorDeVenda: number;
+
+  @Column({ type: 'text', nullable: false })
+  observacoes: string;
 }

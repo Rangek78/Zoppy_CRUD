@@ -3,14 +3,24 @@
         <div class="col-md-4 mx-auto">
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombre">Nome</label>
+                    <label for="nome">Nome:</label>
                     <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="produto.nome" required
                         autocomplete="off">
                 </div>
                 <div class="form-group">
-                    <label for="preço">Preço:</label>
-                    <input type="number" class="form-control" id="preço" name="preço" [(ngModel)]="produto.valor"
-                        required autocomplete="off">
+                    <label for="valorDeVenda">Preço para venda:</label>
+                    <input type="number" step="0.01" pattern="^\d+(\.\d{1,2})?$" class="form-control" id="valorDeVenda"
+                        name="valorDeVenda" [(ngModel)]="produto.valorDeVenda" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="valorDeCompra">Preço de compra:</label>
+                    <input type="number" step="0.01" pattern="^\d+(\.\d{1,2})?$" class="form-control" id="valorDeCompra"
+                        name="valorDeCompra" [(ngModel)]="produto.valorDeCompra" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="observacoes">Observações:</label>
+                    <input type="text" class="form-control" id="observacoes" name="observacoes"
+                        [(ngModel)]="produto.observacoes" required autocomplete="off">
                 </div>
                 <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                     <i class="fas fa-edit"></i>Atualizar</button>

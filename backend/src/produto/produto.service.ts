@@ -57,7 +57,15 @@ export class ProdutoService {
         new MessageDto('O nome do produto já está sendo utilizado'),
       );
     produto.nome = dto.nome ? dto.nome : produto.nome;
-    produto.valor = dto.valor ? dto.valor : produto.valor;
+    produto.valorDeCompra = dto.valorDeCompra
+      ? dto.valorDeCompra
+      : produto.valorDeCompra;
+    produto.valorDeVenda = dto.valorDeVenda
+      ? dto.valorDeVenda
+      : produto.valorDeVenda;
+    produto.observacoes = dto.observacoes
+      ? dto.observacoes
+      : produto.observacoes;
     await this.produtoRepository.save(produto);
     return new MessageDto(`Produto ${produto.nome} atualizado`);
   }

@@ -1,10 +1,19 @@
 export class Produto {
   id?: number;
   nome: string;
-  valor: number;
+  valorDeCompra: number;
+  valorDeVenda: number;
+  observacoes: string;
 
-  constructor(nome: string, valor: number) {
+  constructor(
+    nome: string,
+    valorDeCompra: number,
+    valorDeVenda: number,
+    observacoes: string
+  ) {
     this.nome = nome;
-    this.valor = valor;
+    this.valorDeCompra = valorDeCompra;
+    this.valorDeVenda = valorDeVenda;
+    this.observacoes = observacoes;
   }
 }

@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './editar-produto.component.css',
 })
 export class EditarProdutoComponent implements OnInit {
-  // 4. Allow null type
   produto: Produto | null = null;
 
   constructor(

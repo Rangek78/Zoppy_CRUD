@@ -13,7 +13,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class NovoProdutoComponent implements OnInit {
   nome = '';
-  valor: number | null = null;
+  valorDeCompra: number | null = null;
+  valorDeVenda: number | null = null;
+  observacoes = '';
 
   constructor(
     private produtoService: ProdutoService,
@@ -24,11 +26,21 @@ export class NovoProdutoComponent implements OnInit {
   ngOnInit() {}
 
   onCreate(): void {
-    if (this.valor === null || this.nome === '') {
-      this.toastr.error('Nome e Valor são obrigatórios', 'Fail');
+    if (
+      this.valorDeCompra === null ||
+      this.valorDeVenda === null ||
+      this.nome === '' ||
+      this.observacoes === ''
+    ) {
+      this.toastr.error('Todos os campos são obrigatórios', 'Fail');
       return;
     }
-    const produto = new Produto(this.nome, this.valor!);
+    const produto = new Produto(
+      this.nome,
+      this.valorDeCompra!,
+      this.valorDeVenda!,
+      this.observacoes
+    );
     this.produtoService.save(produto).subscribe({
       next: (data) => {
         this.toastr.success(data.message, 'OK', {

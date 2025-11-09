@@ -10,6 +10,17 @@ export class ProdutoDto {
 
   @IsNumber()
   @IsNotEmpty()
-  @Min(10, { message: ' o preço não pode ser menor que R$ 10' })
-  valor?: number;
+  @Min(0, { message: ' o valor de compra não pode ser menor que R$ 0' })
+  valorDeCompra?: number;
+
+  @IsNumber()
+  @IsNotEmpty()
+  @Min(10, { message: ' o preço para venda não pode ser menor que R$ 10' })
+  valorDeVenda?: number;
+
+  @IsNotBlank({ message: ' a observação não pode estar vazia' })
+  @MaxLength(50, {
+    message: ' a observação não pode exceder 50 caracteres',
+  })
+  observacoes?: string;
 }
