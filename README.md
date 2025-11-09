@@ -112,6 +112,9 @@ ou
 npm run start
 ```
 Isto irá compilar a aplicação e abri-la automaticamente no seu navegador em http://localhost:4200.
+Caso não abra automaticamente, acesse o link manualmente.
+
+Observação: para compatibilidade, mantenha o Zoom da página em 100%.
 
 ## Scripts Úteis (Backend)
 ```
