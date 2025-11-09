@@ -5,7 +5,7 @@ export class ProdutoEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'varchar', length: 10, nullable: false, unique: true })
+  @Column({ type: 'varchar', length: 30, nullable: false, unique: true })
   nome: string;
 
   @Column({ type: 'float', nullable: false })
