@@ -58,7 +58,7 @@ npm install
 ```
 **3. Configure as Variáveis de Ambiente**
 
-Crie uma cópia do arquivo .env.example e renomeie para .env.
+Crie uma cópia do arquivo `.env.example` e renomeie para `.env`.
 
 Abra o novo arquivo .env e configure suas credenciais do MySQL, principalmente a DB_PASSWORD.
 
