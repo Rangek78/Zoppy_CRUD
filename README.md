@@ -24,7 +24,8 @@ Esta é a forma recomendada para configurar o banco de dados no Windows, usando 
    - Baixe o "MySQL Installer for Windows" (o instalador web ou offline).
 
 **2. Execute o Instalador**
-   - Abra o instalador e clique em Add para escolher os programas a serem instalados.
+   - Escolha a opção de instalação "Custom".
+   - Clique em Add para escolher os programas a serem instalados.
    - Escolha a versão 8.0.44 do `MySQL Server - X64` e a versão 8.0.44 do `MySQL Workbench` (em Applications):
       * **MySQL Server 8.0.44 - X64**
       * **MySQL Workbench 8.0.44** (ferramenta visual para gerenciar o banco)
