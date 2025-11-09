@@ -11,11 +11,9 @@ O projeto está estruturado em duas pastas principais:
 ## Pré-requisitos
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
 
-Node.js (versão 18 ou superior é recomendada)
-
-Git
-
-MySQL Community Server: Um servidor de banco de dados MySQL.
+* [Node.js](https://nodejs.org/en/)
+* [Git](https://git-scm.com/)
+* [MySQL Community Server](https://dev.mysql.com/downloads/installer/) (Servidor de banco de dados)
 
 ## Guia de Instalação (MySQL no Windows)
 
@@ -26,7 +24,8 @@ Esta é a forma recomendada para configurar o banco de dados no Windows, usando 
    - Baixe o "MySQL Installer for Windows" (o instalador web ou offline).
 
 **2. Execute o Instalador**
-   - Abra o instalador e clique em Add para escolher os programas a serem instalados.
+   - Escolha a opção de instalação "Custom".
+   - Clique em Add para escolher os programas a serem instalados.
    - Escolha a versão 8.0.44 do `MySQL Server - X64` e a versão 8.0.44 do `MySQL Workbench` (em Applications):
       * **MySQL Server 8.0.44 - X64**
       * **MySQL Workbench 8.0.44** (ferramenta visual para gerenciar o banco)
@@ -59,7 +58,7 @@ npm install
 ```
 **3. Configure as Variáveis de Ambiente**
 
-Crie uma cópia do arquivo .env.example e renomeie para .env.
+Crie uma cópia do arquivo `.env.example` e renomeie para `.env`.
 
 Abra o novo arquivo .env e configure suas credenciais do MySQL, principalmente a DB_PASSWORD.
 
@@ -95,7 +94,7 @@ Em um novo terminal, siga estes passos para iniciar a aplicação frontend.
 
 ```
 # A partir da pasta raiz do projeto
-cd frontend
+cd Zoppy_CRUD/frontend
 ```
 **2. Instale as dependências**
 
@@ -113,6 +112,9 @@ ou
 npm run start
 ```
 Isto irá compilar a aplicação e abri-la automaticamente no seu navegador em http://localhost:4200.
+Caso não abra automaticamente, acesse o link manualmente.
+
+Observação: para compatibilidade, mantenha o Zoom da página em 100%.
 
 ## Scripts Úteis (Backend)
 ```
