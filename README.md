@@ -4,9 +4,9 @@ Este repositório contém o código-fonte para uma aplicação full-stack, com o
 ## Visão Geral
 O projeto está estruturado em duas pastas principais:
 
-/backend: Contém a API RESTful, gerenciamento de banco de dados com TypeORM e lógica de negócios.
+`/backend`: Contém a API RESTful, gerenciamento de banco de dados com TypeORM e lógica de negócios.
 
-/frontend: Contém a aplicação de usuário (SPA) construída com Angular.
+`/frontend`: Contém a aplicação de usuário (SPA) construída com Angular.
 
 ## Pré-requisitos
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
@@ -17,28 +17,53 @@ Git
 
 MySQL Community Server: Um servidor de banco de dados MySQL.
 
+## Guia de Instalação (MySQL no Windows)
+
+Esta é a forma recomendada para configurar o banco de dados no Windows, usando o instalador oficial.
+
+**1. Baixe o MySQL Installer**
+   - Vá para a página oficial: [MySQL Community Downloads](https://dev.mysql.com/downloads/installer/).
+   - Baixe o "MySQL Installer for Windows" (o instalador web ou offline).
+
+**2. Execute o Instalador**
+   - Abra o instalador e, quando solicitado o tipo de instalação ("Setup Type"), escolha "Developer Default" (Padrão de Desenvolvedor) ou "Custom" (Personalizado).
+   - Se escolher "Custom", certifique-se de adicionar para instalação:
+      * **MySQL Server** (a versão mais recente)
+      * **MySQL Workbench** (ferramenta visual para gerenciar o banco)
+
+**3. Configuração do Servidor**
+   - Durante a instalação, o instalador irá pedir para configurar o servidor.
+   - **Autenticação:** Na etapa de "Accounts and Roles", defina uma senha para o usuário `root`. Para simplificar o desenvolvimento, você pode usar `password` (conforme usado neste projeto), mas lembre-se de nunca usar senhas fáceis em produção.
+   - **Serviço do Windows:** Na etapa "Windows Service", mantenha as configurações padrão. Isso irá configurar o MySQL Server para rodar automaticamente como um serviço em segundo plano sempre que você ligar o computador.
+
+**4. Verifique a Conexão com o Workbench**
+   - Após a instalação, abra o **MySQL Workbench**.
+   - Na tela inicial, você verá uma conexão (geralmente "Local instance 3306").
+   - Clique nela e digite a senha do `root` que você acabou de definir (ex: `password`).
+   - Se a conexão for bem-sucedida, você está pronto para prosseguir com a configuração do backend.
+
 ## 1. Configuração do Backend
 Siga estes passos primeiro para deixar o servidor pronto para receber conexões.
 
-1. Clone o repositório:
+**1. Clone o repositório**
 
 ```
 git clone https://github.com/Rangek78/Zoppy_CRUD.git
 cd Zoppy_CRUD/backend
 ```
 
-2. Instale as dependências:
+**2. Instale as dependências**
 
 ```
 npm install
 ```
-3. Configure as Variáveis de Ambiente:
+**3. Configure as Variáveis de Ambiente**
 
 Crie uma cópia do arquivo .env.example e renomeie para .env.
 
 Abra o novo arquivo .env e configure suas credenciais do MySQL, principalmente a DB_PASSWORD.
 
-4. Crie o Banco de Dados:
+**4. Crie o Banco de Dados**
 
 Abra seu cliente MySQL (MySQL Workbench, DBeaver, etc.).
 
@@ -47,35 +72,35 @@ Execute o seguinte comando SQL para criar o banco de dados que a aplicação usa
 ```
 CREATE DATABASE IF NOT EXISTS CRUD_db;
 ```
-5. Execute as Migrações (Migrations):
+**5. Execute as Migrações (Migrations)**
 
 Este comando irá ler a pasta src/migrations e criar todas as tabelas necessárias no seu banco de dados.
 
 ```
 npm run migration:run
 ```
-6. Inicie o Servidor Backend:
+**6. Inicie o Servidor Backend**
 
 ```
 npm run start:dev
 ```
 O servidor agora estará rodando em http://localhost:8080. Mantenha este terminal aberto.
 
-2. Configuração do Frontend
+## 2. Configuração do Frontend
 Em um novo terminal, siga estes passos para iniciar a aplicação frontend.
 
-1. Navegue até a pasta do frontend:
+**1. Navegue até a pasta do frontend**
 
 ```
 # A partir da pasta raiz do projeto
 cd frontend
 ```
-2. Instale as dependências:
+**2. Instale as dependências**
 
 ```
 npm install
 ```
-3. Inicie a Aplicação Frontend:
+**3. Inicie a Aplicação Frontend**
 
 ```
 ng serve -o
@@ -87,8 +112,8 @@ npm run start
 ```
 Isto irá compilar a aplicação e abri-la automaticamente no seu navegador em http://localhost:4200.
 
+#Scripts Úteis (Backend)
 ```
-# Scripts Úteis (Backend)
 # Inicia o servidor em modo de desenvolvimento com "watch mode".
 npm run start:dev
 
