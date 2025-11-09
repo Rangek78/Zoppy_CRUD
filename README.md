@@ -11,11 +11,9 @@ O projeto está estruturado em duas pastas principais:
 ## Pré-requisitos
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
 
-Node.js (versão 18 ou superior é recomendada)
-
-Git
-
-MySQL Community Server: Um servidor de banco de dados MySQL.
+- Node.js
+- Git
+- MySQL Community Server: Um servidor de banco de dados MySQL.
 
 ## Guia de Instalação (MySQL no Windows)
 
