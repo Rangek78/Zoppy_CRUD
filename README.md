@@ -26,20 +26,20 @@ Esta é a forma recomendada para configurar o banco de dados no Windows, usando 
    - Baixe o "MySQL Installer for Windows" (o instalador web ou offline).
 
 **2. Execute o Instalador**
-   - Abra o instalador e, quando solicitado o tipo de instalação ("Setup Type"), escolha "Developer Default" (Padrão de Desenvolvedor) ou "Custom" (Personalizado).
-   - Se escolher "Custom", certifique-se de adicionar para instalação:
-      * **MySQL Server** (a versão mais recente)
-      * **MySQL Workbench** (ferramenta visual para gerenciar o banco)
+   - Abra o instalador e clique em Add para escolher os programas a serem instalados.
+   - Escolha a versão 8.0.44 do `MySQL Server - X64` e a versão 8.0.44 do `MySQL Workbench` (em Applications):
+      * **MySQL Server 8.0.44 - X64**
+      * **MySQL Workbench 8.0.44** (ferramenta visual para gerenciar o banco)
 
 **3. Configuração do Servidor**
    - Durante a instalação, o instalador irá pedir para configurar o servidor.
-   - **Autenticação:** Na etapa de "Accounts and Roles", defina uma senha para o usuário `root`. Para simplificar o desenvolvimento, você pode usar `password` (conforme usado neste projeto), mas lembre-se de nunca usar senhas fáceis em produção.
+   - **Autenticação:** Na etapa de "Accounts and Roles", defina uma senha para o usuário `root`. Esta senha será usada no arquivo `.env` para configuração do `backend`.
    - **Serviço do Windows:** Na etapa "Windows Service", mantenha as configurações padrão. Isso irá configurar o MySQL Server para rodar automaticamente como um serviço em segundo plano sempre que você ligar o computador.
 
 **4. Verifique a Conexão com o Workbench**
    - Após a instalação, abra o **MySQL Workbench**.
    - Na tela inicial, você verá uma conexão (geralmente "Local instance 3306").
-   - Clique nela e digite a senha do `root` que você acabou de definir (ex: `password`).
+   - Clique nela e digite a senha do `root` que você acabou de definir.
    - Se a conexão for bem-sucedida, você está pronto para prosseguir com a configuração do backend.
 
 ## 1. Configuração do Backend
@@ -65,9 +65,11 @@ Abra o novo arquivo .env e configure suas credenciais do MySQL, principalmente a
 
 **4. Crie o Banco de Dados**
 
-Abra seu cliente MySQL (MySQL Workbench, DBeaver, etc.).
+Abra seu cliente MySQL (MySQL Workbench, DBeaver, etc.) e adicione uma nova conexão em MySQL connections.
 
-Execute o seguinte comando SQL para criar o banco de dados que a aplicação usará:
+Clique em `Test Connection` para garantir que o servidor está sendo executado.
+
+Depois, abra a conexão e execute o seguinte comando SQL para criar o banco de dados que a aplicação usará:
 
 ```
 CREATE DATABASE IF NOT EXISTS CRUD_db;
