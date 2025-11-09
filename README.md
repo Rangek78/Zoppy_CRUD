@@ -114,7 +114,7 @@ npm run start
 ```
 Isto irá compilar a aplicação e abri-la automaticamente no seu navegador em http://localhost:4200.
 
-#Scripts Úteis (Backend)
+## Scripts Úteis (Backend)
 ```
 # Inicia o servidor em modo de desenvolvimento com "watch mode".
 npm run start:dev
